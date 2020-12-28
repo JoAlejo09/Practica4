@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package software_practica4;
+import java.util.Scanner;
 
 /**
  *
@@ -16,8 +17,11 @@ public class Test {
      */
     public static void main(String[] args) throws InterruptedException {
         // TODO code application logic here
-        Pregunta pa = new Pregunta();
+        Examen ex = new Examen();
+        Scanner teclado = new Scanner(System.in);
+        String Selecciones[],opcion;
+        Selecciones = ex.CompletarExamen();
+        ex.obtenerNota();   
         
     }
-    
 }
