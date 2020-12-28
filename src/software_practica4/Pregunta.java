@@ -1,14 +1,13 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package software_practica4;
 
-/**
- *
- * @author HP
- */
+
 public class Pregunta {
-    
+    public String Pregunta[];
+    public String [][]Opciones;
+    public String []Respuesta;
+    public int []Ponderacion;
+public Pregunta () throws InterruptedException{
+    System.out.println("Inicializando...");
+    Thread.sleep(5);
+}
 }
