@@ -32,6 +32,16 @@ public class Estudiante {
         curso = new Curso(materia, codigoMateria);
         
     }
+    
+    public int existeEstudiante(ArrayList<Estudiante> est, String nombre)
+    {
+        for (int i =0; i<est.size(); i++)
+        {
+            if(est.get(i).getNombre().equalsIgnoreCase(nombre))
+                return i;
+        }
+        return -1;
+    }
     /*
     public void formularioEstudiante()
     {

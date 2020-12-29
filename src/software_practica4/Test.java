@@ -37,43 +37,19 @@ public class Test {
                 String[] usuarioLogin = login();
                 int indiceUsuario =-1;
                 
-                for(int i =0; i< estudiantes.size(); i++)
-                {
-                    if (estudiantes.get(i).getNombre().equalsIgnoreCase(usuarioLogin[0]))
-                    {
-                        indiceUsuario=i;
-                        i= estudiantes.size();
-                    }
-                }
-                
-                if(indiceUsuario != -1)
+                if(est.existeEstudiante(estudiantes, usuarioLogin[0]) != -1)
                 {
                     Examen ex = new Examen();
                     ex.completarExamen();
                     ex.obtenerNota();
                 }
                 else
-                    System.out.println("Usuario no registrado");
-                
-                /*
-                Examen ex = new Examen();
-                
-                menu.login();
-                String selecciones[];
-                selecciones = ex.completarExamen();
-                ex.obtenerNota();  
-                 */
+                    System.out.println("Usuario no registrado");              
             }
         } 
-        /*
-        Examen ex = new Examen();
-        Scanner teclado = new Scanner(System.in);
-        String Selecciones[],opcion;
-        Selecciones = ex.completarExamen();
-        ex.obtenerNota();   
-        */
     }
     
+ 
       public static String[] login()
     {
         Scanner teclado = new Scanner(System.in);
