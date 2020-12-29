@@ -19,7 +19,7 @@ public class Test {
      */
     public static void main(String[] args) throws InterruptedException {
         // TODO code application logic here
-        Menu menu = new Menu();
+        
         boolean opcion;
         ArrayList <Estudiante> estudiantes = new ArrayList();
         Estudiante est = new Estudiante(0, "valeria", "24/12/1997", "valeria@epn","Estudios Sociales","001");
@@ -28,12 +28,12 @@ public class Test {
         estudiantes.add(est);
         estudiantes.add(est1);
                 
-        if(menu.menu()== 1)
+        if(menu()== 1)
         {
-            opcion=menu.usuarioRegistrado();
+            opcion=usuarioRegistrado();
             if(opcion) //si esta registrado
             {
-                String[] usuarioLogin = menu.login();
+                String[] usuarioLogin = login();
                 int indiceUsuario =-1;
                 
                 for(int i =0; i< estudiantes.size(); i++)
@@ -72,4 +72,47 @@ public class Test {
         ex.obtenerNota();   
         */
     }
+    
+      public static String[] login()
+    {
+        Scanner teclado = new Scanner(System.in);
+        String valores[] = new String[2];
+        
+        System.out.println("\t=================================");
+        System.out.println("\t-------------Login---------------");
+        System.out.println("Ingrese su nombre");
+        valores[0]=teclado.nextLine();
+        System.out.println("Ingrese su email");
+        valores[1]=teclado.nextLine();
+        
+        return valores;
+    }
+    
+       public static int menu()
+    {
+        Scanner teclado = new Scanner(System.in);
+        int devolver;
+        
+        System.out.println("\t=================================");
+        System.out.println("\t-----------TuAcademy!------------");
+        System.out.println("\t------------ M e n u ------------");
+        System.out.println("1)Rendir Examen");
+        
+        devolver = Integer.parseInt(teclado.nextLine());
+        return devolver;
+        
+    
+    }
+    
+    public static boolean usuarioRegistrado()
+    {
+        Scanner teclado = new Scanner(System.in);
+        
+        System.out.println("\t=================================");
+        System.out.println("¿Se encuentra usted registrado en TuAcademY?");
+        System.out.println("0) Si\n1) No");
+        
+       return (teclado.nextInt()==0);
+    }
+    
 }
