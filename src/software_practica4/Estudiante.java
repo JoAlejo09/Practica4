@@ -19,59 +19,19 @@ public class Estudiante {
     private String nombre;
     private String fechaNacimiento;
     private String correo;
-
+    private Curso curso;
+    
     public String getNombre() {
         return nombre;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public String getFechaNacimiento() {
-        return fechaNacimiento;
-    }
-
-    public void setFechaNacimiento(String fechaNacimiento) {
-        this.fechaNacimiento = fechaNacimiento;
-    }
-
-    public String getCorreo() {
-        return correo;
-    }
-
-    public void setCorreo(String correo) {
-        this.correo = correo;
-    }
-
-    public Curso getCurso() {
-        return curso;
-    }
-
-    public void setCurso(Curso curso) {
-        this.curso = curso;
-    }
-    public Curso curso;
-
-    public int getCodigo() {
-        return codigo;
-    }
-    
     public Estudiante(int codigo, String nombre, String fecha, String correo, String materia, String codigoMateria)
     {
         registrarEstudiante(codigo, nombre, fecha, correo);
         curso = new Curso(materia, codigoMateria);
         
     }
-    
-      public Estudiante()
-    {
-        formularioEstudiante();
-        curso = new Curso();
-        curso.registrarCurso();
-    }
-    
-
+    /*
     public void formularioEstudiante()
     {
         String valores[] = new String[4];
@@ -91,6 +51,7 @@ public class Estudiante {
         registrarEstudiante(Integer.parseInt(valores[0]),valores[1],valores[2],valores[3]);
         System.out.println("\t Estudiante registrado con éxito");
     }
+    */
     public void registrarEstudiante(int codigo, String nombre, String fecha, String correo)
     {
         this.codigo = codigo;
@@ -98,16 +59,5 @@ public class Estudiante {
         this.fechaNacimiento = fecha;
         this.correo = correo;
     }
-    
-    public void actualizarInformacion(int codigo, String correo)
-    {
-        this.codigo = codigo;
-        this.correo = correo;
-                
-    }
-    
-    public boolean existeEstudiante(int codigoExiste, int codigoNoExiste)
-    {
-        return (codigoExiste == codigoNoExiste);
-    }
+
 }

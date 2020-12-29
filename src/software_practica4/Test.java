@@ -24,6 +24,7 @@ public class Test {
         ArrayList <Estudiante> estudiantes = new ArrayList();
         Estudiante est = new Estudiante(0, "valeria", "24/12/1997", "valeria@epn","Estudios Sociales","001");
         Estudiante est1 = new Estudiante(1, "brigitte", "24/02/1990", "brigitte@epn","Estudios Sociales","001");
+       
         
         estudiantes.add(est);
         estudiantes.add(est1);
