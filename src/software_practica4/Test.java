@@ -18,11 +18,11 @@ public class Test {
     public static void main(String[] args) throws InterruptedException {
         // TODO code application logic here
         Menu menu = new Menu();
-        int opcion;
+        boolean opcion;
         if(menu.menu()== 1)
         {
             opcion=menu.usuarioRegistrado();
-            if(opcion == 0) //si esta registrado
+            if(opcion) //si esta registrado
             {
                 Examen ex = new Examen();
                 
@@ -31,10 +31,6 @@ public class Test {
                 selecciones = ex.completarExamen();
                 ex.obtenerNota();  
                  
-            }
-            else if (opcion == 1) // no esta registrado
-            {
-            
             }
         } 
         /*

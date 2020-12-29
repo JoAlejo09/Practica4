@@ -29,7 +29,7 @@ public class Menu {
     
     }
     
-    public int usuarioRegistrado()
+    public boolean usuarioRegistrado()
     {
         Scanner teclado = new Scanner(System.in);
         
@@ -37,7 +37,7 @@ public class Menu {
         System.out.println("¿Se encuentra usted registrado en TuAcademY?");
         System.out.println("0) Si\n1) No");
         
-       return teclado.nextInt();
+       return (teclado.nextInt()==0);
     }
     
     public String[] login()
