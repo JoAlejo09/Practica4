@@ -31,13 +31,10 @@ public class Test {
                 
         if(menu()== 1)
         {
-            opcion=usuarioRegistrado();
-            if(opcion) //si esta registrado
+            if(usuarioRegistrado()) //si esta registrado
             {
-                String[] usuarioLogin = login();
-                int indiceUsuario =-1;
                 
-                if(est.existeEstudiante(estudiantes, usuarioLogin[0]) != -1)
+                if(est.existeEstudiante(estudiantes, login()[0]) != -1)
                 {
                     Examen ex = new Examen();
                     ex.completarExamen();
