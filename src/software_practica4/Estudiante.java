@@ -5,6 +5,8 @@
  */
 package software_practica4;
 
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.Scanner;
 
 /**
@@ -17,18 +19,56 @@ public class Estudiante {
     private String nombre;
     private String fechaNacimiento;
     private String correo;
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getFechaNacimiento() {
+        return fechaNacimiento;
+    }
+
+    public void setFechaNacimiento(String fechaNacimiento) {
+        this.fechaNacimiento = fechaNacimiento;
+    }
+
+    public String getCorreo() {
+        return correo;
+    }
+
+    public void setCorreo(String correo) {
+        this.correo = correo;
+    }
+
+    public Curso getCurso() {
+        return curso;
+    }
+
+    public void setCurso(Curso curso) {
+        this.curso = curso;
+    }
     public Curso curso;
+
+    public int getCodigo() {
+        return codigo;
+    }
     
-    public Estudiante(int codigo, String nombre, String fecha, String correo)
+    public Estudiante(int codigo, String nombre, String fecha, String correo, String materia, String codigoMateria)
     {
         registrarEstudiante(codigo, nombre, fecha, correo);
-        curso = new Curso();
+        curso = new Curso(materia, codigoMateria);
+        
     }
     
       public Estudiante()
     {
         formularioEstudiante();
         curso = new Curso();
+        curso.registrarCurso();
     }
     
 
@@ -64,5 +104,10 @@ public class Estudiante {
         this.codigo = codigo;
         this.correo = correo;
                 
+    }
+    
+    public boolean existeEstudiante(int codigoExiste, int codigoNoExiste)
+    {
+        return (codigoExiste == codigoNoExiste);
     }
 }

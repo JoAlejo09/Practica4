@@ -18,6 +18,17 @@ public class Curso {
     {
         registrarCurso();
     }
+
+    public String[][] getTipo() {
+        return tipo;
+    }
+
+    public Curso(String materia, String codigo) {
+        this.tipo = new String[1][2];
+        this.tipo[0][0]= materia;
+        this.tipo[0][1]= codigo; 
+    }
+    
     
     public void registrarCurso()
     {
