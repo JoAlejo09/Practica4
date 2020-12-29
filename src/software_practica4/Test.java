@@ -34,18 +34,18 @@ public class Test {
             if(opcion) //si esta registrado
             {
                 String[] usuarioLogin = menu.login();
-                boolean bandera = false;
+                int indiceUsuario =-1;
                 
                 for(int i =0; i< estudiantes.size(); i++)
                 {
                     if (estudiantes.get(i).getNombre().equalsIgnoreCase(usuarioLogin[0]))
                     {
+                        indiceUsuario=i;
                         i= estudiantes.size();
-                        bandera = true;
                     }
                 }
                 
-                if(bandera)
+                if(indiceUsuario != -1)
                 {
                     Examen ex = new Examen();
                     ex.completarExamen();
