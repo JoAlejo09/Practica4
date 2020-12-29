@@ -18,10 +18,14 @@ public class Examen {
        pa = new Pregunta();
       this.selecciones= new String[10];
     }
-    public String[] CompletarExamen(){
+    public String[] completarExamen(){
     String cadena="",opcion;
     
     Scanner teclado = new Scanner(System.in);
+    
+    System.out.println("\t=================================");
+    System.out.println("\t-----Examen Estudios Sociales----");
+        
     for(int i = 0; i<10;i++ ){
         System.out.println("--------------- Pregunta "+(i+1)+" ---------------");
         cadena+= pa.generarPregunta(i);

@@ -5,10 +5,64 @@
  */
 package software_practica4;
 
+import java.util.Scanner;
+
 /**
  *
  * @author HP
  */
 public class Estudiante {
     
+    private int codigo;
+    private String nombre;
+    private String fechaNacimiento;
+    private String correo;
+    public Curso curso;
+    
+    public Estudiante(int codigo, String nombre, String fecha, String correo)
+    {
+        registrarEstudiante(codigo, nombre, fecha, correo);
+        curso = new Curso();
+    }
+    
+      public Estudiante()
+    {
+        formularioEstudiante();
+        curso = new Curso();
+    }
+    
+
+    public void formularioEstudiante()
+    {
+        String valores[] = new String[4];
+        Scanner teclado = new Scanner(System.in);
+        
+        System.out.println("----------------------------------\n");
+        System.out.println("-----Registro Estudiante-----------\n");
+        System.out.println("1) Ingrese codigo");
+        valores[0]=teclado.nextLine();
+        System.out.println("2) Ingrese nombre");
+        valores[1]=teclado.nextLine();
+        System.out.println("3) Ingrese fecha");
+        valores[2]=teclado.nextLine();
+        System.out.println("4) Ingrese correo");
+        valores[3]=teclado.nextLine();
+        
+        registrarEstudiante(Integer.parseInt(valores[0]),valores[1],valores[2],valores[3]);
+        System.out.println("\t Estudiante registrado con éxito");
+    }
+    public void registrarEstudiante(int codigo, String nombre, String fecha, String correo)
+    {
+        this.codigo = codigo;
+        this.nombre = nombre;
+        this.fechaNacimiento = fecha;
+        this.correo = correo;
+    }
+    
+    public void actualizarInformacion(int codigo, String correo)
+    {
+        this.codigo = codigo;
+        this.correo = correo;
+                
+    }
 }

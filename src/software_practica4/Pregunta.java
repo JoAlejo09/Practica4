@@ -2,7 +2,7 @@ package software_practica4;
 
 
 public class Pregunta {
-    public static String Preguntas[]=
+    public static String[] preguntas=
     {"1. En Ecuador, durante el período presidencial de Juan José Flores, ¿qué es lo que generalmente se considera como lo más positivo de su gobierno?",
      "2. En Ecuador, el Concordato Garciano trajo consigo que: ",
      "3. En Ecuador, la presidencia de Vicente Rocafuerte merece ser reconocida por su afán civilizador y progresista. Esto se refiere a que:",
@@ -14,7 +14,7 @@ public class Pregunta {
      "8. A partir de 1809, a Quito comenzó a llamársele Luz de América, porque: ",
      "9. Cívica es:",
      "10.De los siguientes titulares del periódico, ¿cuál pertenece a un país que vive en democracia?"};
-    public static String[][] Opciones={{"A. Gestionó para obtener un pago justo de la deuda inglesa.",
+    public static String[][] opciones={{"A. Gestionó para obtener un pago justo de la deuda inglesa.",
         "B. Entrenó a los soldados venezolanos","C. Se preocupó por la educación de la juventud y de los adultos.",
         "D. El Ecuador tomó posesión oficial de las Islas Galápagos."},
         {"A. La educación era laica, estatal y gratuita, sin distinción de clase social.",
@@ -48,13 +48,13 @@ public class Pregunta {
          "B. Las imitaciones burlescas de las autoridades provoca el cierre de señal de las radiodifusoras a nivel nacional.",
          "C. La ciudadanía de nuestro país se prepara para sufragar en las próximas elecciones,",
          "D. Las federaciones estudiantiles universitarias que tengan un criterio distinto al del gobierno serán exiliadas."}};
-    public static String[] Respuestas={"D","C","D","B","D","B","C","D","B","C"};
+    public static String[] respuestas={"D","C","D","B","D","B","C","D","B","C"};
 
     public String generarPregunta(int fila){
-        String cadena= "\n"+Preguntas[fila];
+        String cadena= "\n"+preguntas[fila];
         for(int i=0;i<4;i++)
         {
-            cadena+="\n"+Opciones[fila][i];
+            cadena+="\n"+opciones[fila][i];
         }
         return cadena;
     }
@@ -67,7 +67,7 @@ public class Pregunta {
     public int validarNota(String respuesta[]){
         int puntaje=0;
         for(int i=0;i<respuesta.length;i++){
-            if(respuesta[i].equalsIgnoreCase(Respuestas[i])){
+            if(respuesta[i].equalsIgnoreCase(respuestas[i])){
                 puntaje++;
             }
         }
