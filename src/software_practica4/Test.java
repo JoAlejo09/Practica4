@@ -19,8 +19,6 @@ public class Test {
      */
     public static void main(String[] args) throws InterruptedException {
         // TODO code application logic here
-        
-        boolean opcion;
         ArrayList <Estudiante> estudiantes = new ArrayList();
         Estudiante est = new Estudiante(0, "valeria", "24/12/1997", "valeria@epn","Estudios Sociales","001");
         Estudiante est1 = new Estudiante(1, "brigitte", "24/02/1990", "brigitte@epn","Estudios Sociales","001");
@@ -50,32 +48,28 @@ public class Test {
       public static String[] login()
     {
         Scanner teclado = new Scanner(System.in);
-        String valores[] = new String[2];
+        String[] valoresEntrada = new String[2];
         
         System.out.println("\t=================================");
         System.out.println("\t-------------Login---------------");
         System.out.println("Ingrese su nombre");
-        valores[0]=teclado.nextLine();
+        valoresEntrada[0]=teclado.nextLine();
         System.out.println("Ingrese su email");
-        valores[1]=teclado.nextLine();
+        valoresEntrada[1]=teclado.nextLine();
         
-        return valores;
+        return valoresEntrada;
     }
     
        public static int menu()
     {
         Scanner teclado = new Scanner(System.in);
-        int devolver;
         
         System.out.println("\t=================================");
         System.out.println("\t-----------TuAcademy!------------");
         System.out.println("\t------------ M e n u ------------");
         System.out.println("1)Rendir Examen");
         
-        devolver = Integer.parseInt(teclado.nextLine());
-        return devolver;
-        
-    
+        return Integer.parseInt(teclado.nextLine());
     }
     
     public static boolean usuarioRegistrado()
